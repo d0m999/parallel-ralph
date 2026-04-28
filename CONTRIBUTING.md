@@ -27,7 +27,7 @@ feature PRs are all welcome.
 ## Dev setup
 
 ```bash
-git clone https://github.com/OWNER/parallel-ralph.git
+git clone https://github.com/d0m999/parallel-ralph.git
 cd parallel-ralph
 python3 -m venv .venv && source .venv/bin/activate
 pip install -e '.[dev]'

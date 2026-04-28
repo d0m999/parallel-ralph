@@ -1,6 +1,6 @@
 # parallel-ralph
 
-[![test](https://github.com/OWNER/parallel-ralph/actions/workflows/test.yml/badge.svg)](https://github.com/OWNER/parallel-ralph/actions/workflows/test.yml)
+[![test](https://github.com/d0m999/parallel-ralph/actions/workflows/test.yml/badge.svg)](https://github.com/d0m999/parallel-ralph/actions/workflows/test.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-blue.svg)](https://www.python.org/downloads/)
 
@@ -87,7 +87,7 @@ harness 本身是**纯标准库**——运行时没有任何第三方 Python 依
 **安装步骤**
 
 ```bash
-git clone https://github.com/OWNER/parallel-ralph.git
+git clone https://github.com/d0m999/parallel-ralph.git
 cd parallel-ralph
 pip install -e '.[dev]'      # 只在你想跑 pytest / ruff 时需要
 pytest -q                    # smoke test（应输出 55 passed）

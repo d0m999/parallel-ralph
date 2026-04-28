@@ -64,5 +64,5 @@ top of.
   validation.
 - **MIT license**, pure-stdlib runtime, `pytest` + `ruff` for dev.
 
-[Unreleased]: https://github.com/OWNER/parallel-ralph/compare/v0.1.0...HEAD
-[0.1.0]: https://github.com/OWNER/parallel-ralph/releases/tag/v0.1.0
+[Unreleased]: https://github.com/d0m999/parallel-ralph/compare/v0.1.0...HEAD
+[0.1.0]: https://github.com/d0m999/parallel-ralph/releases/tag/v0.1.0

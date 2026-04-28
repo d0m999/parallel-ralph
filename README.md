@@ -1,6 +1,6 @@
 # parallel-ralph
 
-[![test](https://github.com/OWNER/parallel-ralph/actions/workflows/test.yml/badge.svg)](https://github.com/OWNER/parallel-ralph/actions/workflows/test.yml)
+[![test](https://github.com/d0m999/parallel-ralph/actions/workflows/test.yml/badge.svg)](https://github.com/d0m999/parallel-ralph/actions/workflows/test.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-blue.svg)](https://www.python.org/downloads/)
 
@@ -91,7 +91,7 @@ The harness itself is **pure stdlib** — no third-party Python deps at runtime.
 **Install**
 
 ```bash
-git clone https://github.com/OWNER/parallel-ralph.git
+git clone https://github.com/d0m999/parallel-ralph.git
 cd parallel-ralph
 pip install -e '.[dev]'      # only needed if you want to run pytest / ruff
 pytest -q                    # smoke test (should report 55 passed)
