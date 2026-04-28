@@ -1,0 +1,40 @@
+[project]
+name = "parallel-ralph"
+version = "0.1.0"
+description = "Parallel ralph harness — run N disjoint Claude Code agent loops with set-theoretic shard verification, write-boundary hooks, and graceful degradation."
+readme = "README.md"
+license = { file = "LICENSE" }
+requires-python = ">=3.10"
+authors = [
+    { name = "parallel-ralph contributors" },
+]
+keywords = ["claude-code", "ralph", "agent-harness", "parallel", "llm"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+]
+
+# Pure stdlib at runtime — no third-party deps.
+# Demo/example tasks (see examples/) may add their own (pytest, etc.).
+dependencies = []
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8",
+    "ruff>=0.5",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.pytest.ini_options]
+markers = [
+    "unit: fast in-process tests with no I/O outside tmp_path",
+    "integration: tests that spawn subprocesses or touch the local repo",
+]
+testpaths = ["tests"]

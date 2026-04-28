@@ -1,0 +1,33 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.uv/
+
+# Ralph runtime state — never commit ANY of these (machine-local, ephemeral)
+.ralph/prd.json
+.ralph/PROMPT.md
+.ralph/progress.txt
+.ralph/loop.log
+.ralph/run.log
+.ralph/.instance
+.ralph/.last-branch
+.ralph/current_story.json
+.ralph/.retries/
+.ralph/state/
+.ralph/stories/
+.ralph/archive/
+
+# Sharded ralph runtime (whole tree per shard is generated)
+.ralph-shard-*/
+
+# Editor / OS
+.DS_Store
+.idea/
+.vscode/
+*.swp
+
+# Claude Code session state (if you run ralph from inside Claude Code)
+.claude/settings.local.json
