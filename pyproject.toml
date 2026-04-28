@@ -32,6 +32,13 @@ dev = [
 requires = ["hatchling"]
 build-backend = "hatchling.build"
 
+# The runtime code lives in `.ralph/scripts/` and `scripts_4x/` as CLI
+# scripts rather than an importable Python package, so the wheel ships
+# no files. The pyproject is here to declare dev deps (pytest + ruff)
+# and let `pip install -e '.[dev]'` work for contributors and CI.
+[tool.hatch.build.targets.wheel]
+bypass-selection = true
+
 [tool.pytest.ini_options]
 markers = [
     "unit: fast in-process tests with no I/O outside tmp_path",
