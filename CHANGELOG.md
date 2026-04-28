@@ -12,6 +12,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 Initial public release. Extracted and sanitized from a private LLM-eval
 project that drove thousands of LLM-as-judge classifications in parallel.
 
+The ralph loop pattern itself comes from [Geoffrey Huntley's
+"ralph"](https://ghuntley.com/ralph/); this harness was directly
+inspired by [snarktank/ralph](https://github.com/snarktank/ralph), which
+provided a concrete reference implementation of the loop we built on
+top of.
+
 ### Added
 - **Set-theoretic shard verification** — `render_shards.py` splits a baseline
   manifest into N disjoint shards (auto-split, `--splits "a-b,c-d,..."`,

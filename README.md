@@ -208,3 +208,6 @@ modes encountered there.
 The underlying ralph loop pattern is from
 [Geoffrey Huntley's "ralph"](https://ghuntley.com/ralph/) — credit there
 for the original idea of "one PRD, one acceptance file, loop until done."
+This harness was directly inspired by
+[snarktank/ralph](https://github.com/snarktank/ralph), which provided a
+concrete reference implementation of the loop we built on top of.
