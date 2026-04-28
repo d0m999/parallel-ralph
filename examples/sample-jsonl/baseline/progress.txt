@@ -1,0 +1,13 @@
+## Codebase Patterns
+
+This is the sample-jsonl example baseline. Each story is a "batch" of N
+sentiment-classification tasks. The acceptance gate is the parameterized
+JsonlSchemaGate; see `prd.json` for the schema config.
+
+Streaming write pattern: per task, the operator subagent pipes one verdict
+JSON line to `.ralph/scripts/append_verdict.py` which validates schema and
+fsyncs.
+
+## Completed Stories
+
+## Current Blockers

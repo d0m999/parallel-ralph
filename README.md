@@ -1,5 +1,9 @@
 # parallel-ralph
 
+[![test](https://github.com/OWNER/parallel-ralph/actions/workflows/test.yml/badge.svg)](https://github.com/OWNER/parallel-ralph/actions/workflows/test.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
+[![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-blue.svg)](https://www.python.org/downloads/)
+
 A harness for running **N disjoint [ralph](https://ghuntley.com/ralph/) loops
 in parallel** under [Claude Code](https://claude.com/claude-code), with:
 

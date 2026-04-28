@@ -1,0 +1,67 @@
+{
+  "project": "sample-jsonl",
+  "branchName": "main",
+  "description": "Sample data-fill demo: each story produces a few verdict rows in state/verdicts.jsonl. The default acceptance gate is the parameterized 5-gate JsonlSchemaGate.",
+  "designDocs": [],
+  "userStories": [
+    {
+      "id": "BATCH-001",
+      "title": "BATCH-001 · 4 sentiment-classification tasks",
+      "description": "Read .ralph/stories/batch-001.jsonl (4 lines), classify each sentence sentiment in {positive, negative, neutral}.",
+      "storyType": "data-fill",
+      "entryCount": 4,
+      "modifies": [".ralph/state/verdicts.jsonl", ".ralph/state/seen_task_ids.json"],
+      "creates": [],
+      "acceptanceCriteria": [
+        "verdicts.jsonl contains exactly 4 rows for this batch",
+        "Every verdict has schema_version='sentiment-v1'",
+        "Each verdict.qa is one of positive/negative/neutral",
+        "reason length ≥ 80 characters for ≥ 90% of rows",
+        "At least 2 distinct qa values across the batch (or 1 if n_tasks ≤ 5)"
+      ],
+      "priority": 1,
+      "passes": false,
+      "attempts": 0,
+      "timeoutSeconds": 1200
+    },
+    {
+      "id": "BATCH-002",
+      "title": "BATCH-002 · 4 sentiment-classification tasks",
+      "description": "Same as BATCH-001 over batch-002.jsonl.",
+      "storyType": "data-fill",
+      "entryCount": 4,
+      "modifies": [".ralph/state/verdicts.jsonl", ".ralph/state/seen_task_ids.json"],
+      "creates": [],
+      "acceptanceCriteria": [
+        "verdicts.jsonl contains exactly 4 rows for this batch",
+        "Every verdict has schema_version='sentiment-v1'",
+        "Each verdict.qa is one of positive/negative/neutral",
+        "reason length ≥ 80 characters for ≥ 90% of rows",
+        "At least 2 distinct qa values across the batch"
+      ],
+      "priority": 2,
+      "passes": false,
+      "attempts": 0,
+      "timeoutSeconds": 1200
+    }
+  ],
+  "acceptance": {
+    "max_attempts": 3,
+    "default_gate": {
+      "type": "jsonl_schema",
+      "schema_version": "sentiment-v1",
+      "verdict_schema": {
+        "required_fields": ["task_id", "text", "qa", "reason"],
+        "id_field": "task_id",
+        "qa_field": "qa",
+        "reason_field": "reason",
+        "valid_qa": ["positive", "negative", "neutral"],
+        "min_reason_chars": 80,
+        "reason_long_ratio_min": 0.9,
+        "distinct_qa_min": 2,
+        "distinct_qa_min_small": 1,
+        "small_batch_threshold": 5
+      }
+    }
+  }
+}

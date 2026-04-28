@@ -1,0 +1,64 @@
+{
+  "project": "openapi-impl",
+  "branchName": "main",
+  "description": "Sample code-implementation demo: each story implements one REST endpoint (handler + tests). The acceptance gate is a CommandGate that runs the per-endpoint pytest file.",
+  "designDocs": ["examples/openapi-impl/openapi.yaml"],
+  "userStories": [
+    {
+      "id": "BATCH-001",
+      "title": "BATCH-001 · GET /health",
+      "description": "Implement examples/openapi-impl/src/handlers/health.py exposing get_health() returning {\"status\":\"ok\"}. Tests at examples/openapi-impl/tests/test_health.py must pass.",
+      "storyType": "code-impl",
+      "modifies": [
+        "examples/openapi-impl/src/handlers/health.py"
+      ],
+      "creates": [
+        "examples/openapi-impl/tests/test_health.py"
+      ],
+      "acceptanceCriteria": [
+        "pytest examples/openapi-impl/tests/test_health.py exits 0"
+      ],
+      "acceptanceGate": {
+        "type": "command",
+        "command": "pytest examples/openapi-impl/tests/test_health.py -q",
+        "timeout": 120
+      },
+      "priority": 1,
+      "passes": false,
+      "attempts": 0,
+      "timeoutSeconds": 1800
+    },
+    {
+      "id": "BATCH-002",
+      "title": "BATCH-002 · GET /users/{id}",
+      "description": "Implement examples/openapi-impl/src/handlers/users.py exposing get_user(user_id: str) returning {'id': user_id, 'name': '...'}. Use a dict-backed in-memory store for the demo.",
+      "storyType": "code-impl",
+      "modifies": [
+        "examples/openapi-impl/src/handlers/users.py"
+      ],
+      "creates": [
+        "examples/openapi-impl/tests/test_users.py"
+      ],
+      "acceptanceCriteria": [
+        "pytest examples/openapi-impl/tests/test_users.py exits 0"
+      ],
+      "acceptanceGate": {
+        "type": "command",
+        "command": "pytest examples/openapi-impl/tests/test_users.py -q",
+        "timeout": 120
+      },
+      "priority": 2,
+      "passes": false,
+      "attempts": 0,
+      "timeoutSeconds": 1800
+    }
+  ],
+  "acceptance": {
+    "max_attempts": 3,
+    "default_gate": {
+      "type": "command",
+      "command": "pytest examples/openapi-impl/tests/ -q",
+      "timeout": 300
+    }
+  }
+}

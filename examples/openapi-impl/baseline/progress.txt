@@ -1,0 +1,16 @@
+## Codebase Patterns
+
+This is the openapi-impl example baseline. Each story implements ONE REST
+endpoint as a handler module + a pytest test file. The acceptance gate is
+a CommandGate that runs the per-endpoint pytest.
+
+For real code-impl projects, the manifest "task_ids" can stay empty — the
+data-fill helpers (`run_batch.py`, `append_verdict.py`) are not used in
+this mode. The operator agent edits files directly per story `modifies` /
+`creates`, runs the configured CommandGate, and flips `passes` itself
+(typically by running a `prd.py finalize`-equivalent or by exit-promise
+emission).
+
+## Completed Stories
+
+## Current Blockers
